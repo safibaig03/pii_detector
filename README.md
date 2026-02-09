@@ -205,8 +205,7 @@ No transformer models required.
 
 * Presidio NER is **CPU-heavy by nature**
 * Structured data is optimized via **sampling**
-* Free-text masking requires **per-row NLP** (unavoidable)
-* Streamlit may appear “stuck” during computation — this is expected
+* Free-text masking requires **per-row NLP** 
 
 ---
 
