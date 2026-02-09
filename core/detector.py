@@ -6,10 +6,6 @@ from core.sampling import get_robust_sample
 from core.free_text import is_free_text, mask_free_text_row
 from core.policy import SKIP_PII_ENTITIES
 
-from presidio_analyzer import AnalyzerEngine
-from presidio_analyzer.nlp_engine import NlpEngineProvider
-
-
 # ===============================
 # INIT ANALYZER 
 # ===============================
@@ -19,19 +15,7 @@ import streamlit as st
 
 @st.cache_resource
 def get_analyzer():
-    nlp_engine = NlpEngineProvider(
-        nlp_configuration={
-            "nlp_engine_name": "spacy",
-            "models": [
-                {
-                    "lang_code": "en",
-                    "model_name": "en_core_web_sm"
-                }
-            ]
-        }
-    ).create_engine()
-
-    return AnalyzerEngine(nlp_engine=nlp_engine)
+    return AnalyzerEngine()
 
 analyzer =get_analyzer()
 
